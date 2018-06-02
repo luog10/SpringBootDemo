@@ -3,10 +3,48 @@
     <title>index</title>
 </head>
 <link href="../css/base.css" rel="stylesheet"/>
+<script type="text/javascript">
+    window.onload = function () {
+        var jc = "";
+        for (var i = 1; i < 10; i++) {
+            for (var j = 1; j <= i; j++) {
+                var result = i * j;
+                jc += '<span style = "display:inline-table;width:95px;" >' + i + ' <span> * </span>' + j + '<span>=</span >' + result + '</span>'
+            }
+            jc += '<br/>'
+        }
+        document.getElementById("div-jjc").innerHTML = jc;
+
+        var jj = "";
+        for (var i = 1; i < 10; i++) {
+            for (var j = 1; j <= i; j++) {
+                var result = i + j;
+                jj += '<span style = "display:inline-table;width:100px;" >' + i + ' <span> + </span>' + j + '<span>=</span >' + result + '</span>'
+            }
+            jj += '<br/>'
+        }
+        document.getElementById("div-jjj").innerHTML = jj;
+    }
+</script>
 <body>
-<p>welcome to home-index page</p>
+<div style="text-align: center">
+<h2 >欢迎来到首页</h2>
 <p></p>
 <p></p>
 <a href="user/list.html" th:href="@{/User/GetAllUser}">用户列表</a>
+<p></p>
+<p></p>
+</div>
+<div style="margin-left: 100px">
+<div>
+    <h3>九九乘法表</h3>
+<div id="div-jjc"></div>
+</div>
+<p></p>
+<div>
+    <h3>九九加法表</h3>
+    <div id="div-jjj"></div>
+</div>
+</div>
 </body>
 </html>
