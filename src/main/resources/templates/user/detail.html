@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Detail</title>
+</head>
+<body>
+<div>
+<h2>用户详情   <a href="user/list.html" th:href="@{/User/GetAllUser}">返回列表</a></h2>
+<div th:object="${user}">
+    <div >编号：<span th:text="${user.getSysNo()}"></span></div>
+    <div >用户名称：<span th:text="${user.getUserName()}"></span></div>
+    <div >用户ID：<span th:text="${user.getUserID()}"></span></div>
+    <div >注册日期：<span th:text="${user.getIndateTxt()}"></span></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user list</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+        table, td, th {
+            border: 1px solid blue;
+        }
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h2>用户列表  <a href="home/index.html" th:href="@{/home/index}">返回首页</a></h2>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <td>操作</td>
+            <td>编号</td>
+            <td>用户名称</td>
+            <td>用户ID</td>
+            <td>注册日期</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user:${users}">
+
+            <td><a href="user/detail.html" th:href="@{/User/GetUserBySysNo(sysno=${user.getSysNo()})}">查看详情</a></td>
+            <td th:text="${user.getSysNo()}"></td>
+            <td th:text="${user.getUserName()}"></td>
+            <td th:text="${user.getUserID()}"></td>
+            <td th:text="${user.getIndateTxt()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
